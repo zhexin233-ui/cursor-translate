@@ -1,70 +1,143 @@
-# Cursor 设置简体中文补丁
+# Cursor Settings 中文补丁
 
-支持 **Cursor 3.27.22 和 3.27.14** 的定点资源汉化工具。使用本机原版设置模块生成 AST 节点清单，不做全局字符串替换，不注入 DOM 脚本。
+为 Cursor 的标准 IDE 与独立 Agents 窗口提供简体中文设置界面，支持中文搜索、英文关键词检索及设置项跳转。
 
-## 支持范围
+本项目通过命令行工具安装本地资源补丁。**macOS 与 Windows 均已实测通过**，当前适配 Cursor **3.27.22** 和 **3.27.14**。
 
-- 标准 IDE 窗口及独立 Agents 窗口的设置：导航、设置标题和说明、按钮、提示、可访问性标签及模块内相关弹窗。
-- 中文子串搜索、英文关键词和混合查询；保留原搜索别名，兼容原英文标签跳转。
-- 保留品牌、模型名、配置键、命令、示例路径及用户内容。Customize 只翻译导航入口，不翻译页面。Agents/Glass 窗口仅翻译设置，聊天、终端、编辑器内容和标准 VS Code 设置不在本版范围。
-- macOS 资源已核验；Windows 路径、进程检测、安装和恢复流程已实现并通过模拟测试，但**尚无真实 Windows 安装包与系统运行验收**。只接受与已核验资源完全相同的指纹，不据版本号放行。
+> 本项目为非官方汉化工具，与 Cursor / Anysphere 无隶属关系。安装会修改应用资源；macOS 还会替换原应用签名并放宽动态库校验。请先阅读下方兼容性与备份说明。
 
-适配版本：
+## 功能
 
-| 版本 | commit | IDE 原始 SHA-256 |
-| --- | --- | --- |
-| 3.27.22 | `b1aa50cb6db84fd3e8c808259cb172ea73425c10` | `fd9ac3ed70ddcfa975f357187152488abcc8a4d183d776442593d5967b9821b6` |
-| 3.27.14 | `69b724ebc67ec522c1b5d287a5025f7a7e81be90` | `5197ce48a203b89b28c2e1ec0c8eefd393ea40ecb7d37c5e33cc594629ed771b` |
+- **设置汉化**：覆盖导航、设置名称、说明、按钮、提示及相关弹窗。
+- **双窗口支持**：同时适配标准 IDE 设置与独立 Agents 设置。
+- **中英文搜索**：支持中文关键词、中文子串、英文原文及混合查询，保留结果跳转能力。
+- **版本校验**：安装前核对版本、commit、资源指纹和完整性校验值。
+- **备份与恢复**：提供安装状态查询、重复安装检测、卸载恢复及失败回滚。
 
-Glass 资源独立核验指纹，与 IDE 一同备份、安装和恢复。
+品牌名称、模型名称、配置键、命令和用户内容保留原文。汉化范围仅限 Cursor 专属设置；Customize 页面、聊天、编辑器内容、终端及标准 VS Code 设置不在范围内。部分共享导航文字和动态服务端文案仍可能显示英文。
 
-## 使用
+## 兼容性
 
-需要 Node.js 22 或更高版本、pnpm。先在此项目目录安装依赖：
+| 项目 | 支持情况 |
+| --- | --- |
+| Cursor 版本 | 3.27.22、3.27.14 |
+| macOS | 已完成安装、启动、设置显示、中英文搜索及跳转验证 |
+| Windows | 已由用户实测，运行正常 |
+| Node.js | 22 或更高版本 |
+| 包管理器 | pnpm，项目使用 10.13.1 |
+
+即使版本号相同，不同发行包的资源也可能存在差异。工具仅接受已适配的资源指纹；遇到不匹配时会停止安装。版本适配信息见 [版本配置](scripts/versions.js) 和 [补丁清单](adapters)。
+
+## 快速开始
+
+### 获取项目
+
+在已安装 Git、Node.js 和 pnpm 的终端中执行：
 
 ```sh
+git clone https://github.com/zhexin233-ui/cursor-translate.git
+cd cursor-translate
 pnpm install --frozen-lockfile
+```
+
+当前通过项目源码运行，尚未提供独立安装程序。
+
+### 检查状态
+
+```sh
 node src/cli.js status
 ```
 
-完全退出 Cursor 后安装，重新打开应用查看中文设置：
+工具会自动查找常见安装目录，并显示 Cursor 版本、适配状态和补丁状态。
+
+### 安装汉化
+
+**完全退出 Cursor，包括后台进程**，然后执行：
 
 ```sh
 node src/cli.js install
 ```
 
-卸载同样需要完全退出 Cursor：
+安装成功后重新打开 Cursor，进入设置即可查看中文界面。
+
+### 卸载恢复
+
+完全退出 Cursor 后执行：
 
 ```sh
 node src/cli.js uninstall
 ```
 
-非默认安装位置可指定应用根目录，macOS 为 `.app`，Windows 为包含 `Cursor.exe` 的目录：
+工具会核验当前应用与备份，再恢复对应版本的原始资源。卸载完成后保留备份，便于检查恢复结果。
+
+## 命令与选项
+
+| 命令或选项 | 说明 |
+| --- | --- |
+| `status` | 查询版本、适配情况和安装状态 |
+| `install` | 校验、备份并安装汉化补丁 |
+| `uninstall` | 恢复安装前的应用资源 |
+| `--app-path <路径>` | 指定 Cursor 应用根目录 |
+| `--state-dir <路径>` | 指定备份与操作记录目录 |
+| `--json` | 输出 JSON 格式的结果 |
+| `--help` | 查看帮助 |
+
+macOS 指定 `.app` 路径：
 
 ```sh
-node src/cli.js status --app-path '/Applications/Cursor.app'
-node src/cli.js install --app-path 'C:\Users\你的用户名\AppData\Local\Programs\cursor'
+node src/cli.js install --app-path "/Applications/Cursor.app"
 ```
 
-`--json` 输出结构化结果；`--state-dir 路径` 更改备份位置。安装和卸载必须使用同一个备份目录。默认位置为 `~/.cursor-settings-zh/`，按安装路径隔离。
+Windows 指定包含 `Cursor.exe` 的目录，例如在 PowerShell 中执行：
 
-可写的用户安装不需要管理员权限。若预检提示目录无写入权限，请使用有权限的账户或在用户可写位置安装应用；工具不会自动提权。
+```powershell
+node src/cli.js install --app-path "$env:LOCALAPPDATA\Programs\cursor"
+```
+
+默认备份目录为用户主目录下的 `.cursor-settings-zh`，不同应用路径分别保存记录。使用自定义 `--state-dir` 时，安装、状态查询和卸载应使用同一个目录。
+
+应用目录需要可写权限。工具不会自动提权；遇到权限错误时，请使用有权限的账户，或将 Cursor 安装在用户可写的位置。
 
 ## 备份、签名与更新
 
-安装前核验版本、commit、整个目标脚本指纹和原版完整性校验清单。所有补丁在内存生成、验证语法后才写入；同步更新目标资源的 SHA-256 完整性校验值。重复安装不叠加补丁。
+### 备份方式
 
-Windows 备份两份脚本和 `product.json`。macOS 使用 `ditto --rsrc --extattr --acl` 完整备份应用并验证原签名，随后以临时签名重新签署修改后的应用，保留各进程原有 entitlements、flags、runtime 元数据，并为主进程和 Helper 添加 `com.apple.security.cs.disable-library-validation`，允许没有 Team ID 的临时签名进程加载 Electron 库；不清除隔离属性。这会放宽该应用的动态库校验，hardened runtime 仍保留。macOS 的原 Developer ID 签名在安装补丁期间被替换，卸载通过完整备份恢复。首次启动可能停在钥匙串访问授权，请本人在系统弹窗完成验证，工具不会读取或代填系统密码。
+- **Windows**：备份两份工作台脚本和 `product.json`。
+- **macOS**：完整备份应用包，保留原签名及相关文件元数据，并记录完整应用树指纹。
 
-macOS 记录完整应用树指纹，检测额外文件、符号链接和内容变化。完整备份通常约占一个应用的磁盘空间；卸载暂存恢复副本还需要一个应用的空间。卸载后保留原备份以及交换前的应用目录，路径位于 `state.json` 的 `backup` 和 `restore.displaced`，确认恢复正常后可以自行删除。
+macOS 完整备份约需一个应用包的空间；卸载暂存恢复副本时还需要额外空间。卸载后保留的原版备份和交换前应用路径，可在操作记录 `state.json` 的 `backup` 与 `restore.displaced` 字段中查看。
 
-Cursor 更新会覆盖补丁。更新后先运行 `status`，新版本需要重新适配。工具拒绝把旧版本备份覆盖到新应用，也拒绝覆盖第三方未知修改。不要在 Cursor 运行期间执行安装或卸载，首版不安装守护程序。
+### macOS 签名说明
 
-## 中断恢复
+修改应用资源后，工具会使用临时签名重新签署应用，保留原有权限与 hardened runtime，并为主进程及 Helper 添加 `com.apple.security.cs.disable-library-validation`。这会放宽该应用的动态库校验，以便临时签名进程加载 Electron 库。
 
-安装失败会尝试回滚。未完成事务会保留备份和阶段记录；先完全退出 Cursor，然后运行同一 `uninstall` 命令。若存在残留 `lock`，确认没有补丁工具进程后，删除提示路径下的空 `lock` 目录再重试。
+首次启动可能出现钥匙串访问授权，请在 macOS 系统弹窗中自行完成验证。工具不会读取或代填系统密码，也不会自动清除应用隔离属性。卸载时通过完整备份恢复原应用及其签名。
 
-macOS 目录交换路径在操作前写入日志；即使原 `.app` 路径暂时缺失，也可使用明确的 `--app-path` 和原 `--state-dir` 重试卸载。若签名中断后的应用树无法证明属于本次补丁，工具将拒绝自动覆盖，并给出完整原版备份位置。此时保留当前应用和备份，用官方对应版本安装包恢复应用；不要手动将旧脚本覆盖到新版本。
+### Cursor 更新后
+
+Cursor 更新可能覆盖补丁。更新后请先执行 `status`，确认新版本是否已适配。未知版本和资源指纹不会自动套用旧补丁，旧版本备份也不会覆盖新版本应用。
+
+本项目不安装后台守护程序。新增版本适配会随仓库更新发布。
+
+## 常见问题
+
+### 提示 Cursor 仍在运行
+
+关闭窗口不一定代表应用已退出。请完全退出 Cursor，并确认后台进程和更新程序已结束，再重新执行命令。
+
+### 安装后仍显示英文
+
+先执行 `status`，确认补丁已安装到当前使用的 Cursor 路径，然后完全退出并重新启动应用。请确认查看的是 Cursor 设置；聊天、Customize 页面和标准 VS Code 设置不在汉化范围内。
+
+### 提示版本或资源指纹不匹配
+
+当前发行包尚未适配，或应用资源已被其他工具修改。请勿手动跳过校验。反馈时提供 Cursor 版本、操作系统和错误信息即可，无需提供密钥、账户凭据或个人配置。
+
+### 安装或卸载中断
+
+先完全退出 Cursor，使用相同的应用路径和备份目录执行 `uninstall`。如果提示残留 `lock`，请确认没有补丁工具进程运行，再删除提示路径下的空 `lock` 目录后重试。
+
+macOS 即使原 `.app` 路径在目录交换中暂时缺失，也可通过明确的 `--app-path` 和原 `--state-dir` 继续恢复。如果应用包含无法确认的修改，工具会拒绝自动覆盖。此时请保留当前应用和备份，使用官方对应版本安装包恢复，避免将旧脚本覆盖到新版本。
 
 ## 开发与验证
 
@@ -73,23 +146,35 @@ pnpm test
 pnpm check
 ```
 
-`test` 不需要安装 Cursor；检查事务、回滚、进程保护、搜索与映射。`check` 只读本机原版资源（已安装时使用默认备份目录中的完整原版备份），在临时目录验证完整补丁脚本语法，并执行实际设置搜索函数，结束后删除临时脚本。可通过 `pnpm check /完整路径/Resources/app` 指定资源目录。
+- `pnpm test`：运行自动化测试，覆盖补丁范围、搜索、版本保护、安装卸载、失败回滚与中断恢复，无需安装 Cursor。
+- `pnpm check`：读取已适配的原版资源，检查两份完整脚本的语法，并执行实际搜索函数。已安装补丁时，可使用默认备份目录中的完整原版备份。
 
-维护词典位于 `dictionaries/zh-CN.tsv`。`adapters/<版本>.json` 和 `<版本>-glass.json` 分别记录两套设置的原文、译文、位置、分类和预期命中数；`dictionaries/approved-extra.json` 是逐项审查的局部显示常量。维护者修改词典后运行：
+主要维护文件：
+
+| 路径 | 用途 |
+| --- | --- |
+| `dictionaries/zh-CN.tsv` | 中英文映射词典 |
+| `adapters/` | 按版本保存的定点补丁清单 |
+| `scripts/versions.js` | 已适配版本的资源指纹与定位信息 |
+| `scripts/build-adapter.js` | 生成标准 IDE 设置补丁 |
+| `scripts/build-glass-adapter.js` | 生成独立 Agents 设置补丁 |
+| `src/` | 命令行、安装、签名与恢复逻辑 |
+| `test/` | 自动化测试 |
+
+词典调整后，应针对对应版本的**原版资源目录**重新生成两份补丁清单，再运行测试与资源检查：
 
 ```sh
-node scripts/build-adapter.js
-node scripts/build-glass-adapter.js
+node scripts/build-adapter.js "/path/to/resources/app"
+node scripts/build-glass-adapter.js "/path/to/resources/app"
+node scripts/check.js "/path/to/resources/app"
+node scripts/check-glass.js "/path/to/resources/app"
 pnpm test
-pnpm check
 ```
 
-生成器只读原版应用，不修改应用；更换版本必须重新审查资源边界、AST、搜索函数、平台包指纹和可显示文案。`dictionaries/pending.json` 和 `glass-pending.json` 记录候选遗漏项，技术标识经审查后明确保留。未知动态或服务端文案保持英文。
+新增版本需要重新核验资源结构、显示文案、搜索逻辑和平台兼容性。当前自动化测试共 20 项。
 
-本项目不分发 Cursor 完整资源或安装包；补丁清单仅包含定点修改所需片段。
+## 问题反馈
 
-## 本机验收记录
+欢迎通过 [Issues](https://github.com/zhexin233-ui/cursor-translate/issues) 反馈遗漏翻译、兼容性问题或版本适配需求。请附上 Cursor 版本、操作系统、复现步骤，以及已隐去个人信息的截图或错误提示。
 
-2026 年 10 月 27 日：正式 `/Applications/Cursor.app` 的 3.27.22 已完成安装、签名校验及启动验收。登录后的 Agents 设置导航、通用页和模型页显示中文；搜索“模型”及“Task Models”均返回正确结果，点击“任务模型”后成功跳转。模型名称保留原文，模型页面排版正常。
-
-自动化测试共 20 项通过，两份完整工作台脚本的语法及真实搜索函数验证通过。Windows 未完成实机验收；部分共享导航文字（例如 Back）及动态服务端文案保留英文。
+本项目仅提供汉化工具与定点补丁数据，不分发 Cursor 完整资源或安装包。Cursor 及相关商标归各自权利人所有。
