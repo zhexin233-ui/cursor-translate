@@ -10,7 +10,7 @@ import {loadAdapter,applyPatch} from '../src/patch.js';
 import {versions} from './versions.js';
 import {originalApp} from './original-app.js';
 import {APP} from './inspect.js';
-const app=originalApp(process.argv[2]??APP),version=JSON.parse(fs.readFileSync(path.join(app,'package.json'))).version,adapter=loadAdapter(version).additionalTargets[0],symbols=versions[version].glass;
+const app=originalApp(process.argv[2]??APP),version=JSON.parse(fs.readFileSync(path.join(app,'product.json'))).version,adapter=loadAdapter(version).additionalTargets[0],symbols=versions[version].glass;
 const bytes=applyPatch(fs.readFileSync(path.join(app,adapter.file)),adapter),source=bytes.toString();
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'cursor-glass-check-'));
 try{

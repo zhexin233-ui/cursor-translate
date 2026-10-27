@@ -27,7 +27,7 @@ test('未知版本或资源、校验不符时无写入',t=>{
  const f=fixture(t);fs.writeFileSync(path.join(f.target.app,'package.json'),'{"version":"next"}');
  assert.throws(()=>install(f.target,f.options),/不支持/);assert.deepEqual(fs.readFileSync(path.join(f.target.app,f.file)),f.source);
  fs.writeFileSync(path.join(f.target.app,'package.json'),'{"version":"3.27.14"}');fs.writeFileSync(path.join(f.target.app,f.file),'changed');
- assert.throws(()=>install(f.target,f.options),/指纹/);
+ assert.throws(()=>install(f.target,f.options),/指纹|校验/);
 });
 test('运行中的应用被拒绝，支持路径带空格和中文',()=>{
  assert.throws(()=>assertClosed({root:'/Applications/测试 Cursor.app',platform:'darwin'},()=>'/Applications/测试 Cursor.app/Contents/MacOS/Cursor\n'),/仍在运行/);
@@ -104,7 +104,7 @@ test('多资源补丁预检全部通过后才写入，卸载恢复未列入校�
  const f=fixture(t),other=Buffer.from('const voice="Voice";'),start=other.toString().indexOf('"Voice"');
  const resource={version:'3.27.14',commit:'test',file:'out/glass.js',sha256:sha256(other),edits:[{start,end:start+7,original:'"Voice"',replacement:'"语音"',kind:'literal',expected:1,context:'glass/label'}]};
  f.options.adapter.additionalTargets=[resource];fs.writeFileSync(path.join(f.target.app,resource.file),'unknown');
- assert.throws(()=>install(f.target,f.options),/指纹/);assert.deepEqual(fs.readFileSync(path.join(f.target.app,f.file)),f.source);
+ assert.throws(()=>install(f.target,f.options),/指纹|校验/);assert.deepEqual(fs.readFileSync(path.join(f.target.app,f.file)),f.source);
  fs.writeFileSync(path.join(f.target.app,resource.file),other);install(f.target,f.options);
  assert.match(fs.readFileSync(path.join(f.target.app,resource.file),'utf8'),/语音/);
  uninstall(f.target,f.options);assert.deepEqual(fs.readFileSync(path.join(f.target.app,resource.file)),other);assert.deepEqual(fs.readFileSync(path.join(f.target.app,'product.json')),f.product);

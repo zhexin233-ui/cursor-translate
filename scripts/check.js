@@ -11,7 +11,7 @@ import {loadAdapter,applyPatch} from '../src/patch.js';
 import {originalApp} from './original-app.js';
 import {APP,settingsRegion} from './inspect.js';
 import {versions} from './versions.js';
-const app=originalApp(process.argv[2]??APP),version=JSON.parse(fs.readFileSync(path.join(app,'package.json'))).version,adapter=loadAdapter(version);
+const app=originalApp(process.argv[2]??APP),version=JSON.parse(fs.readFileSync(path.join(app,'product.json'))).version,adapter=loadAdapter(version);
 const symbols=versions[version].desktop;
 const original=fs.readFileSync(path.join(app,adapter.file));
 const patched=applyPatch(original,adapter),source=patched.toString();

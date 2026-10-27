@@ -11,7 +11,8 @@
     "test": "node --test",
     "status": "node src/cli.js status",
     "inspect": "node scripts/inspect.js",
-    "check": "node scripts/check.js && node scripts/check-glass.js"
+    "check": "node scripts/check.js && node scripts/check-glass.js",
+    "check:auto": "node scripts/check-auto.js"
   },
   "engines": {
     "node": ">=22"
