@@ -1,0 +1,657 @@
+[
+  {
+    "source": "Plugins, MCPs, Skills, and Rules have moved to Customize",
+    "start": 38086264,
+    "context": "settings-constant"
+  },
+  {
+    "source": "We couldn't send those invites. Try again in a moment.",
+    "start": 38125064,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Add at least one email.",
+    "start": 38127162,
+    "context": "m_w"
+  },
+  {
+    "source": "Couldn't generate link",
+    "start": 38127728,
+    "context": "m_w"
+  },
+  {
+    "source": "Retry",
+    "start": 38127780,
+    "context": "m_w"
+  },
+  {
+    "source": "Copied",
+    "start": 38127790,
+    "context": "m_w"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38138577,
+    "context": "Oug"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38139304,
+    "context": "Oug"
+  },
+  {
+    "source": "Default",
+    "start": 38140256,
+    "context": "x_w"
+  },
+  {
+    "source": "Choose how Agents run tools like command execution, MCP, and file writes.",
+    "start": 38141408,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Allowlist",
+    "start": 38141632,
+    "context": "O_w"
+  },
+  {
+    "source": "Allowlist (with Sandbox)",
+    "start": 38141676,
+    "context": "O_w"
+  },
+  {
+    "source": "Auto-Review (with Sandbox)",
+    "start": 38141780,
+    "context": "O_w"
+  },
+  {
+    "source": "Run Everything (Unsandboxed)",
+    "start": 38141836,
+    "context": "O_w"
+  },
+  {
+    "source": "Agent will ask for approval before running tools.",
+    "start": 38141971,
+    "context": "F_w"
+  },
+  {
+    "source": "Commands that are allowlisted will run automatically.",
+    "start": 38142042,
+    "context": "F_w"
+  },
+  {
+    "source": "Many commands will run automatically inside the sandbox, and you can also allowlist other actions.",
+    "start": 38142130,
+    "context": "F_w"
+  },
+  {
+    "source": "A classifier will run for each action and decide whether it's safe to execute this command. Allowlists are still respected.",
+    "start": 38142256,
+    "context": "F_w"
+  },
+  {
+    "source": "Many commands will run automatically inside the sandbox, and a classifier will run for the actions that cannot run in the sandbox. Allowlists are still respected.",
+    "start": 38142420,
+    "context": "F_w"
+  },
+  {
+    "source": "All commands will run without approval, classification or sandboxing.",
+    "start": 38142609,
+    "context": "F_w"
+  },
+  {
+    "source": "Sandboxed network access is disabled by your admin.",
+    "start": 38149631,
+    "context": "X_w"
+  },
+  {
+    "source": "Sandboxed network access is controlled by your admin. You can still edit allowed/denied domains in sandbox.json in your workspace, but admin policy takes precedence.",
+    "start": 38149685,
+    "context": "X_w"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38154224,
+    "context": "J_w"
+  },
+  {
+    "source": " (your team's allowlist also applies)",
+    "start": 38157924,
+    "context": "nbw"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38159156,
+    "context": "ibw"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38164145,
+    "context": "ubw"
+  },
+  {
+    "source": "Run Mode Disabled by Team Admin",
+    "start": 38165129,
+    "context": "dbw"
+  },
+  {
+    "source": "Run Mode Controlled by Team Admin (Sandbox Enabled)",
+    "start": 38165253,
+    "context": "dbw"
+  },
+  {
+    "source": "Run Mode Controlled by Team Admin",
+    "start": 38165307,
+    "context": "dbw"
+  },
+  {
+    "source": "Run Mode",
+    "start": 38165462,
+    "context": "dbw"
+  },
+  {
+    "source": "Sandboxing is disabled by your admin.",
+    "start": 38166487,
+    "context": "hbw"
+  },
+  {
+    "source": "Moving your skills back to this machine…",
+    "start": 38172601,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Disabled by your team admin.",
+    "start": 38192297,
+    "context": "Zbw"
+  },
+  {
+    "source": "Enabled by Run Everything Auto-Run Mode.",
+    "start": 38192328,
+    "context": "Zbw"
+  },
+  {
+    "source": "Voice mode submit keywords must be single words without spaces or punctuation; duplicates, spaces, and empty entries are removed automatically",
+    "start": 38195287,
+    "context": "Kug"
+  },
+  {
+    "source": "Please open a folder to use background agents.",
+    "start": 38223489,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Background agents only work in folders with a git repository. Please open a folder that contains a git repository to use this feature.",
+    "start": 38223542,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Error checking repo readiness. Please try again.",
+    "start": 38223683,
+    "context": "settings-constant"
+  },
+  {
+    "source": "An organization policy turns off updates on this device.",
+    "start": 38231733,
+    "context": "eSw"
+  },
+  {
+    "source": "An organization policy turns off automatic update checks on this device. Use Check for Updates to get new versions.",
+    "start": 38231811,
+    "context": "eSw"
+  },
+  {
+    "source": "An organization policy limits update checks on this device to when Cursor starts.",
+    "start": 38231947,
+    "context": "eSw"
+  },
+  {
+    "source": "Update Access is managed by internal release-track policy.",
+    "start": 38232549,
+    "context": "settings-constant"
+  },
+  {
+    "source": "By default, get notifications for stable updates. In Early Access, pre-release builds may be unstable for production work.",
+    "start": 38235881,
+    "context": "rSw"
+  },
+  {
+    "source": "Enterprise users can only be notified on stable updates.",
+    "start": 38236224,
+    "context": "rSw"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38242906,
+    "context": "ySw"
+  },
+  {
+    "source": "OK",
+    "start": 38249021,
+    "context": "RSw"
+  },
+  {
+    "source": "Copied",
+    "start": 38258811,
+    "context": "HSw"
+  },
+  {
+    "source": "No local overrides are set. Feature flag, experiment, and dynamic config values all come from Statsig.",
+    "start": 38266838,
+    "context": "mkw"
+  },
+  {
+    "source": "Failed to play sound. Please check the file path is valid and the file is a supported audio format (mp3, wav, ogg).",
+    "start": 38283094,
+    "context": "Bkw"
+  },
+  {
+    "source": "Entry-level plan with access to premium models, unlimited Tab completions, and more.",
+    "start": 38284683,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Reset \"Don’t Ask Again\" Dialogs",
+    "start": 38302114,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Team Default",
+    "start": 38335409,
+    "context": "ECw"
+  },
+  {
+    "source": "Pull Requests",
+    "start": 38342372,
+    "context": "VCw"
+  },
+  {
+    "source": "Pull Requests",
+    "start": 38342400,
+    "context": "VCw"
+  },
+  {
+    "source": "Review Provider",
+    "start": 38342482,
+    "context": "VCw"
+  },
+  {
+    "source": "Review Provider",
+    "start": 38342513,
+    "context": "VCw"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38362155,
+    "context": "M0w"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38378054,
+    "context": "n1w"
+  },
+  {
+    "source": " (controlled by admin)",
+    "start": 38378841,
+    "context": "n1w"
+  },
+  {
+    "source": "Subagent model overrides will only be used in Max Mode",
+    "start": 38402261,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Default chooses an Explore model based on availability and cost",
+    "start": 38402322,
+    "context": "settings-constant"
+  },
+  {
+    "source": "This model is blocked by your administrator and cannot be enabled.",
+    "start": 38430511,
+    "context": "gTw"
+  },
+  {
+    "source": "Showing cached usage data because the latest refresh failed.",
+    "start": 38448826,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Showing cached chart data because the latest refresh failed.",
+    "start": 38448893,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Track your spend against last month and your limit.",
+    "start": 38459931,
+    "context": "zTw"
+  },
+  {
+    "source": "Track your spend against last month.",
+    "start": 38459985,
+    "context": "zTw"
+  },
+  {
+    "source": " Used before your credits.",
+    "start": 38466937,
+    "context": "dEw"
+  },
+  {
+    "source": "Usage past your limit is billed later as on-demand.",
+    "start": 38473671,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Requests stop at this limit. Overage from requests already running isn't billed unless the limit is raised this billing cycle.",
+    "start": 38473729,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Dismiss",
+    "start": 38484308,
+    "context": "D3r"
+  },
+  {
+    "source": "On-demand limit saved successfully",
+    "start": 38494458,
+    "context": "$Ew"
+  },
+  {
+    "source": "Browser Automation",
+    "start": 38088547,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Browser Protection",
+    "start": 38088579,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Agent Voice",
+    "start": 38089679,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Send invite",
+    "start": 38125692,
+    "context": "d_w"
+  },
+  {
+    "source": "Invite sent.",
+    "start": 38125764,
+    "context": "Tug"
+  },
+  {
+    "source": "Generating link…",
+    "start": 38127696,
+    "context": "m_w"
+  },
+  {
+    "source": "Upgrade to Pro",
+    "start": 38133124,
+    "context": "b_w"
+  },
+  {
+    "source": "Small",
+    "start": 38140235,
+    "context": "x_w"
+  },
+  {
+    "source": "Large",
+    "start": 38140282,
+    "context": "x_w"
+  },
+  {
+    "source": "Extra Large",
+    "start": 38140305,
+    "context": "x_w"
+  },
+  {
+    "source": "Ask Every Time",
+    "start": 38141596,
+    "context": "O_w"
+  },
+  {
+    "source": "Run Everything",
+    "start": 38141867,
+    "context": "O_w"
+  },
+  {
+    "source": "Ask Every Time",
+    "start": 38141898,
+    "context": "O_w"
+  },
+  {
+    "source": "Not now",
+    "start": 38172531,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Syncing your skills…",
+    "start": 38172573,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Queue",
+    "start": 38197491,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Agent",
+    "start": 38244841,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Not run",
+    "start": 38245344,
+    "context": "CSw"
+  },
+  {
+    "source": "Cursor Network Diagnostic Results",
+    "start": 38245525,
+    "context": "TSw"
+  },
+  {
+    "source": "No response",
+    "start": 38246595,
+    "context": "ISw"
+  },
+  {
+    "source": "No response",
+    "start": 38247426,
+    "context": "xSw"
+  },
+  {
+    "source": "No response",
+    "start": 38247710,
+    "context": "ASw"
+  },
+  {
+    "source": "Invalid response",
+    "start": 38249542,
+    "context": "MSw"
+  },
+  {
+    "source": "Copy Domains",
+    "start": 38258820,
+    "context": "HSw"
+  },
+  {
+    "source": "Running Diagnostic",
+    "start": 38259785,
+    "context": "HSw"
+  },
+  {
+    "source": "Run Diagnostic",
+    "start": 38259806,
+    "context": "HSw"
+  },
+  {
+    "source": "Audio Files",
+    "start": 38283352,
+    "context": "Bkw"
+  },
+  {
+    "source": "All Files",
+    "start": 38283423,
+    "context": "Bkw"
+  },
+  {
+    "source": "Upgrade to Pro",
+    "start": 38285282,
+    "context": "Gkw"
+  },
+  {
+    "source": "Open chat as editor tabs is unavailable while non-chat content is placed in the Secondary Side Bar.",
+    "start": 38295911,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Are you sure? This replaces your settings and extensions with your vscode ones. This cannot be undone.",
+    "start": 38301881,
+    "context": "settings-constant"
+  },
+  {
+    "source": "You haven’t marked any dialogs as \"Don’t ask again\". Any hidden dialogs will appear here to manage.",
+    "start": 38301998,
+    "context": "settings-constant"
+  },
+  {
+    "source": "VS Code import completed!",
+    "start": 38304079,
+    "context": "Mww"
+  },
+  {
+    "source": "Error importing extensions, please try again.",
+    "start": 38304172,
+    "context": "Mww"
+  },
+  {
+    "source": "Failed to save on-demand limit",
+    "start": 38312199,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Copy sign in link",
+    "start": 38326135,
+    "context": "uCw"
+  },
+  {
+    "source": "Sign in link copied to clipboard",
+    "start": 38326207,
+    "context": "uCw"
+  },
+  {
+    "source": "Failed to copy link to clipboard",
+    "start": 38326308,
+    "context": "uCw"
+  },
+  {
+    "source": "Open pull request links inside Cursor or in the default browser",
+    "start": 38334416,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Choose Origin (cursor.com/codebase) or GitHub for GitHub pull request links on web and desktop",
+    "start": 38334507,
+    "context": "wCw"
+  },
+  {
+    "source": "Choose Origin (cursor.com/codebase), GitHub, or Graphite for pull request links on web and desktop",
+    "start": 38334604,
+    "context": "wCw"
+  },
+  {
+    "source": "Failed to save",
+    "start": 38337552,
+    "context": "MCw"
+  },
+  {
+    "source": "Failed to save",
+    "start": 38340267,
+    "context": "$Cw"
+  },
+  {
+    "source": "Source repository unknown",
+    "start": 38352970,
+    "context": "S0w"
+  },
+  {
+    "source": "Untitled agent",
+    "start": 38354649,
+    "context": "w0w"
+  },
+  {
+    "source": "Created timestamp unavailable",
+    "start": 38356186,
+    "context": "T0w"
+  },
+  {
+    "source": "TypeScript and Python",
+    "start": 38369119,
+    "context": "Y0w"
+  },
+  {
+    "source": "Press Reload Window to {0} Instant Grep now. Press Cancel to keep the current setting.",
+    "start": 38375683,
+    "context": "e1w"
+  },
+  {
+    "source": "&&Reload Window",
+    "start": 38375874,
+    "context": "e1w"
+  },
+  {
+    "source": "Model name looks like a URL or secret. Please enter only the model name.",
+    "start": 38385714,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Refreshing model list",
+    "start": 38394970,
+    "context": "E1w"
+  },
+  {
+    "source": "Refresh model list",
+    "start": 38394994,
+    "context": "E1w"
+  },
+  {
+    "source": "Refresh model list",
+    "start": 38395036,
+    "context": "E1w"
+  },
+  {
+    "source": "Not configured",
+    "start": 38424993,
+    "context": "uTw"
+  },
+  {
+    "source": "Not configured",
+    "start": 38425250,
+    "context": "uTw"
+  },
+  {
+    "source": "Weekly usage limit",
+    "start": 38466662,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Monthly usage limit",
+    "start": 38466687,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Included Usage",
+    "start": 38477915,
+    "context": "wEw"
+  },
+  {
+    "source": "Finish unifying",
+    "start": 38487594,
+    "context": "settings-constant"
+  },
+  {
+    "source": "Contact support",
+    "start": 38487616,
+    "context": "settings-constant"
+  }
+]

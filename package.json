@@ -1,0 +1,24 @@
+{
+  "name": "cursor-settings-zh-cn",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cursor IDE 与 Agents 设置简体中文定点资源补丁",
+  "bin": {
+    "cursor-settings-zh": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "status": "node src/cli.js status",
+    "inspect": "node scripts/inspect.js",
+    "check": "node scripts/check.js && node scripts/check-glass.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "acorn": "8.15.0",
+    "acorn-walk": "8.3.4"
+  }
+}

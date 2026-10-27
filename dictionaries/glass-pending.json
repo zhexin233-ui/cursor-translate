@@ -1,0 +1,214 @@
+[
+  {
+    "source": "header",
+    "context": "glass/zue/children"
+  },
+  {
+    "source": "input",
+    "context": "glass/wOC/children"
+  },
+  {
+    "source": "strong",
+    "context": "glass/_NC/children"
+  },
+  {
+    "source": "example.com\n*.example.com",
+    "context": "glass/template/placeholder"
+  },
+  {
+    "source": "⌘Enter",
+    "context": "glass/ZPC/description"
+  },
+  {
+    "source": "Ctrl+Enter",
+    "context": "glass/ZPC/description"
+  },
+  {
+    "source": "⌥⌘Enter",
+    "context": "glass/ZPC/description"
+  },
+  {
+    "source": "Ctrl+Alt+Enter",
+    "context": "glass/ZPC/description"
+  },
+  {
+    "source": "Ctrl + ",
+    "context": "glass/ZPC/label"
+  },
+  {
+    "source": "Enter",
+    "context": "glass/template/label"
+  },
+  {
+    "source": "Ctrl+",
+    "context": "glass/rMC/label"
+  },
+  {
+    "source": "code",
+    "context": "glass/rn_/children"
+  },
+  {
+    "source": "cursor desktop",
+    "context": "glass/rn_/children"
+  },
+  {
+    "source": "HTTP/2",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "HTTP/1.1",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "HTTP/1.0",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "unspecified",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "quiet",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "loud",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "op",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "the",
+    "context": "glass/_NC/children"
+  },
+  {
+    "source": "your",
+    "context": "glass/_NC/children"
+  },
+  {
+    "source": "agents",
+    "context": "glass/DOC/section"
+  },
+  {
+    "source": "Origin",
+    "context": "glass/NNC/label"
+  },
+  {
+    "source": "GitHub",
+    "context": "glass/NNC/label"
+  },
+  {
+    "source": "Graphite",
+    "context": "glass/NNC/label"
+  },
+  {
+    "source": "button",
+    "context": "glass/Nr_/children"
+  },
+  {
+    "source": "ul",
+    "context": "glass/DLC/children"
+  },
+  {
+    "source": "cursor/",
+    "context": "glass/$LC/placeholder"
+  },
+  {
+    "source": "e.g., *.md, **/generated/**",
+    "context": "glass/QLC/placeholder"
+  },
+  {
+    "source": "Tab",
+    "context": "glass/navigation/tab"
+  },
+  {
+    "source": "indexingGrepRequiresReloadMessage",
+    "context": "glass/sOC/message"
+  },
+  {
+    "source": "https://api.openai.com/v1",
+    "context": "glass/KOC/placeholder"
+  },
+  {
+    "source": "Azure OpenAI",
+    "context": "glass/JOC/accessibleLabel"
+  },
+  {
+    "source": "e.g. gpt-35-turbo",
+    "context": "glass/JOC/placeholder"
+  },
+  {
+    "source": "AWS Bedrock",
+    "context": "glass/e6C/accessibleLabel"
+  },
+  {
+    "source": "e.g. us-east-1",
+    "context": "glass/e6C/placeholder"
+  },
+  {
+    "source": "br",
+    "context": "glass/e6C/children"
+  },
+  {
+    "source": "e.g. anthropic.claude-3-sonnet-20240229-v1:0",
+    "context": "glass/e6C/placeholder"
+  },
+  {
+    "source": "line",
+    "context": "glass/y6C/children"
+  },
+  {
+    "source": "text",
+    "context": "glass/y6C/children"
+  },
+  {
+    "source": "circle",
+    "context": "glass/y6C/children"
+  },
+  {
+    "source": "rect",
+    "context": "glass/y6C/children"
+  },
+  {
+    "source": "data:image/png;base64,",
+    "context": "glass/VtE/children"
+  },
+  {
+    "source": "img",
+    "context": "glass/VtE/children"
+  },
+  {
+    "source": "Cursor Light",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "Cursor Light Colorblind",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "Cursor Light High Contrast",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "Cursor Dark",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "Cursor Dark Colorblind",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "Cursor Dark High Contrast",
+    "context": "glass/settings/label"
+  },
+  {
+    "source": "px",
+    "context": "glass/QnE/children"
+  },
+  {
+    "source": "appearance",
+    "context": "glass/LiE/section"
+  }
+]

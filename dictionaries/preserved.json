@@ -1,0 +1,237 @@
+[
+  {
+    "source": "div",
+    "context": "hIw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "span",
+    "context": "wEw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "input",
+    "context": "E1w/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "hr",
+    "context": "n_w/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "button",
+    "context": "gTw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "svg",
+    "context": "DTw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "path",
+    "context": "DTw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "header",
+    "context": "Vle/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "strong",
+    "context": "iCw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "example.com\n*.example.com",
+    "context": "tbw/placeholder",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "⌘Enter",
+    "context": "dyw/description",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "Ctrl+Enter",
+    "context": "dyw/description",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "⌥⌘Enter",
+    "context": "dyw/description",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "Ctrl+Alt+Enter",
+    "context": "dyw/description",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "Ctrl + ",
+    "context": "dyw/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "Enter",
+    "context": "dyw/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "Ctrl+",
+    "context": "fyw/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "code",
+    "context": "hSw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "cursor desktop",
+    "context": "hSw/children",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "HTTP/2",
+    "context": "settings/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "HTTP/1.1",
+    "context": "settings/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "HTTP/1.0",
+    "context": "settings/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "unspecified",
+    "context": "settings/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "quiet",
+    "context": "settings/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "loud",
+    "context": "settings/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "op",
+    "context": "settings/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "the",
+    "context": "iCw/children",
+    "reason": "动态句子片段，保留原文待上下文核验"
+  },
+  {
+    "source": "your",
+    "context": "iCw/children",
+    "reason": "动态句子片段，保留原文待上下文核验"
+  },
+  {
+    "source": "Origin",
+    "context": "CCw/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "GitHub",
+    "context": "CCw/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "Graphite",
+    "context": "CCw/label",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "ul",
+    "context": "E0w/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "cursor/",
+    "context": "D0w/placeholder",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "e.g., *.md, **/generated/**",
+    "context": "Y0w/placeholder",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "Tab",
+    "context": "J0w/title",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "indexingGrepRequiresReloadMessage",
+    "context": "e1w/message",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "https://api.openai.com/v1",
+    "context": "iTw/placeholder",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "Azure OpenAI",
+    "context": "cTw/accessibleLabel",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "e.g. gpt-35-turbo",
+    "context": "cTw/placeholder",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "AWS Bedrock",
+    "context": "lTw/accessibleLabel",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "e.g. us-east-1",
+    "context": "lTw/placeholder",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "br",
+    "context": "lTw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "e.g. anthropic.claude-3-sonnet-20240229-v1:0",
+    "context": "lTw/placeholder",
+    "reason": "技术名称、快捷键、配置键、示例或内置声音名称，保留原文"
+  },
+  {
+    "source": "line",
+    "context": "DTw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "text",
+    "context": "DTw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "circle",
+    "context": "DTw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  },
+  {
+    "source": "rect",
+    "context": "DTw/children",
+    "reason": "DOM 标签名，禁止翻译"
+  }
+]

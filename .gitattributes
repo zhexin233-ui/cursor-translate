@@ -1,0 +1,2 @@
+# 词典中的行尾空格用于保留动态文案的连接间距。
+dictionaries/zh-CN.tsv whitespace=-blank-at-eol
