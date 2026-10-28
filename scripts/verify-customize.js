@@ -23,5 +23,7 @@ export function verifyCustomize(source,adapter){
  const titles=Array.from(groups,g=>vm.runInNewContext(display[0].replacement,{[original.object.name]:g}));
  assert.deepEqual(titles,['MCPs','技能','子智能体','规则','命令','钩子']);
  for(const text of ['Search Plugins, Skills, MCPs...','New MCP Server','Marketplace Settings','Import Marketplace','Try in Chat'])assert.ok(edits.some(e=>e.original===JSON.stringify(text)),text);
+ for(const text of ['Select a local marketplace folder','Select Folder'])assert.equal(edits.filter(e=>e.original===JSON.stringify(text)).length,1,`本地市场对话框：${text}`);
+ assert.equal(edits.filter(e=>e.context==='customize/standalone/sidebar/action-label').length,1,'真实侧栏市场动作标签');
  return edits.length;
 }

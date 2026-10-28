@@ -1224,3 +1224,5 @@ Rule name cannot be empty	规则名称不能为空
 Rule name can only contain lowercase letters, numbers, and hyphens	规则名称只能包含小写字母、数字和连字符
 A rule with this name already exists	同名规则已存在
 Error	错误
+Select a local marketplace folder	选择本地插件市场文件夹
+Select Folder	选择文件夹

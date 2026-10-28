@@ -14,7 +14,7 @@ const texts=new Set([
  'New User Rule','Style request, response language, tone...','User Rules apply to all of your chats','User Rule','[Untitled]','Delete Rule','Could not update rule.','Could not delete rule.',
  'Use lowercase letters, numbers, and hyphens (must start with a letter or number)','Installing skills from a command is disabled by your team admin',
  'Needs Authentication','Needs attention','Needs authentication','Error - Show Output','Connected','Connecting…','Degraded','Error','Disconnected','Disabled','Loading','Ready',
- 'Confirm','Cancel','Prompt','Failed to validate input.','Customize','Local',
+ 'Select a local marketplace folder','Select Folder','Confirm','Cancel','Prompt','Failed to validate input.','Customize','Local',
  'Plugins, MCPs, Skills, and Rules have moved to Customize',"We've introduced a new home for all the ways to customize Cursor.",'Dismiss','Open Customize',
  'Select workspace folder for MCP configuration','Cannot create workspace MCPs without a workspace. Please open a folder first.'
 ]);
@@ -48,10 +48,11 @@ export function standaloneCustomizeEdits(source,dictionary){
    const status=code.includes('"Needs Authentication"')||code.includes('"Needs attention"')||code.includes('"Needs authentication"');
    const prompt=code.includes('confirmLabel??"Confirm"')||code.includes('"Failed to validate input."');
    const sidebar=code.includes('name:"Customize"')&&code.includes('agent_layout_browse_button');
+   const localMarket=code.includes('handlePickLocalFolder')&&code.includes('Select a local marketplace folder');
    const banner=code.includes('cursor-settings-inline-banner__title');
    const environment=code.includes('return{id:"local",kind:"local",label:"Local"}');
    const command=/\.input\(\{title:[\w$]+\((?:7762|12439|12445),null\)/.test(code);
-   if(!naming&&!status&&!prompt&&!sidebar&&!banner&&!environment&&!command)return;
+   if(!naming&&!status&&!prompt&&!sidebar&&!banner&&!environment&&!command&&!localMarket)return;
    const replaced=[];
    visitAst(fn,(node,parents)=>{
     if(replaced.some(n=>node.start>=n.start&&node.end<=n.end))return;
@@ -75,6 +76,13 @@ export function standaloneCustomizeEdits(source,dictionary){
    });
   });
   visitAst(statement,(node,parents)=>{
+   // Agents 壳层从动作配置读取标签；只匹配市场动作完整的显示结构。
+   if(node.type==='ObjectExpression'){
+    const fields=new Map(node.properties.filter(p=>p.type==='Property').map(p=>[key(p.key),p.value]));
+    if(fields.get('id')?.value==='marketplace'&&fields.get('iconName')?.value==='extensions'&&fields.get('label')?.value==='Customize'&&fields.get('editorPanelType')?.value==='configuration'&&(fields.get('showsAgentSelector')?.value===false||fields.get('showsAgentSelector')?.type==='UnaryExpression'&&fields.get('showsAgentSelector').operator==='!'&&fields.get('showsAgentSelector').argument.value===1)){
+     translate(fields.get('label'),'Customize','literal','sidebar/action-label');
+    }
+   }
    if(node.type!=='Literal'||typeof node.value!=='string'||moduleFor(parents))return;
    const parent=parents.at(-2);
    if(['Plugins, MCPs, Skills, and Rules have moved to Customize','Installing skills from a command is disabled by your team admin'].includes(node.value)&&((parent?.type==='VariableDeclarator'&&parent.init===node)||(parent?.type==='AssignmentExpression'&&parent.right===node)))translate(node,node.value,'literal','migration-banner/title');
