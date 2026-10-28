@@ -1,4 +1,6 @@
-// Glass 设置与标准 IDE 独立编译，只在已核验的设置区间和函数中生成 AST 补丁。
+import {standaloneCustomizeEdits} from './customize-standalone.js';
+import {customizeEdits} from './customize.js';
+// Glass 与标准 IDE 独立编译，在已核验的设置区间、函数及 Customize 模块中生成 AST 补丁。
 import fs from 'node:fs';
 import {parse,parseExpressionAt} from 'acorn';
 import {ancestor,simple} from 'acorn-walk';
@@ -94,6 +96,12 @@ if(keywordStart<row.start||keywordStart>row.end)throw Error('Glass 搜索关键�
 add({start:keywordStart,end:keywordStart+'t.keywords.join(" ")'.length},'[...t.keywords,...t.aliases].join(" ")','search-keywords','glass/search/mixed-keywords');
 const jump=getFunction(cfg.jump);
 add(jump,`function ${cfg.jump}(t,e){const z=Object.getOwnPropertyDescriptor(${JSON.stringify(Object.fromEntries(dict))},e)?.value??e,n=t.querySelectorAll(${cfg.selector});let i;for(const r of n){const s=r.textContent?.trim();if(s===e||s===z)return r;const o=${cfg.direct}(r);i===void 0&&(o===e||o===z)&&(i=r)}return i}`,'search-jump','glass/search/label-target');
+// Customize 与设置区分别收集，固定版本与自动适配共用同一份定点清单。
+for(const edit of [...customizeEdits(source,dict),...standaloneCustomizeEdits(source,dict)]){
+ const existing=edits.find(e=>e.start===edit.start);
+ if(existing){if(existing.end!==edit.end||existing.replacement!==edit.replacement)throw Error(`Customize 节点冲突：${edit.context}`);continue;}
+ seen.add(edit.start);edits.push(edit);
+}
 edits.sort((a,b)=>a.start-b.start);
 for(let i=1;i<edits.length;i++)if(edits[i].start<edits[i-1].end)throw Error(`Glass 补丁重叠：${edits[i].context}`);
 // 生成时对所有修改后的专属区间重新解析；运行时另做完整脚本语法验证。

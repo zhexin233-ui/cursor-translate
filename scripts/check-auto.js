@@ -1,3 +1,4 @@
+import {verifyCustomize} from './verify-customize.js';
 // 对真实资源模拟重新构建：移动位置、重命名搜索函数局部变量，再验证自动适配及搜索行为。
 import fs from 'node:fs';
 import path from 'node:path';
@@ -24,7 +25,9 @@ for(const template of templates){
  let source=original;for(const change of changes.sort((a,b)=>b.start-a.start))source=source.slice(0,change.start)+change.replacement+source.slice(change.end);
  source='// 自动适配验证：原文位置与局部变量名均已变化\n'+source;
  console.log(`正在验证 ${template.file} 的自动重定位…`);
- const adapter=adaptSource(Buffer.from(source),template,{version:'automatic-proof',commit:'rebuilt-resource-proof'}),output=applyPatch(Buffer.from(source),adapter).toString();
+ const adapter=adaptSource(Buffer.from(source),template,{version:'automatic-proof',commit:'rebuilt-resource-proof'});
+ verifyCustomize(source,adapter);
+ const output=applyPatch(Buffer.from(source),adapter).toString();
  const functions=new Map();
  function add(name){
   if(functions.has(name))return;

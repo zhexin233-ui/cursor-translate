@@ -21,7 +21,7 @@ export function applyPatch(bytes, adapter) {
       const after = parse(`(${edit.replacement})`, { ecmaVersion: 'latest' }).body[0].expression;
       if (before.type !== 'Literal' || after.type !== 'Literal' || typeof before.value !== 'string' || typeof after.value !== 'string') throw Error('文案补丁必须是字符串 AST 节点');
     }
-    if(['search-normalizer','search-matcher','search-jump','search-aliases','search-keywords'].includes(edit.kind))parse(edit.replacement,{ecmaVersion:'latest'});
+    if(['search-normalizer','search-matcher','search-jump','search-aliases','search-keywords','display-expression'].includes(edit.kind))parse(edit.replacement,{ecmaVersion:'latest'});
     end = edit.end;
   }
   let result = source;

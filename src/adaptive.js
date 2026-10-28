@@ -66,7 +66,7 @@ export function compilePatterns(source,adapter){
       if(!pattern){pattern={type:owner.type,module,hash:shape.hash,symbols:shape.names.length,names:shape.names,free:analyzeReferences(owner).free,entryName:owner.id?.name,edits:[]};patterns.set(id,pattern);}
       pattern.edits.push({route,edge:found.edge,kind:edit.kind,context:edit.context,
         value:edit.kind==='literal'?found.node.value:edit.kind==='template'?found.node.value.cooked:undefined,
-        replacement:edit.kind.startsWith('search-')?encodeReplacement(edit.replacement,shape.names):edit.replacement});
+        replacement:(edit.kind.startsWith('search-')||edit.kind==='display-expression')?encodeReplacement(edit.replacement,shape.names):edit.replacement});
     }
   });
   if(next!==edits.length)throw Error('原版模板存在未处理修改');
@@ -128,7 +128,7 @@ export function adaptSource(bytes,template,{version,commit}){
       let start=target.start,end=target.end;
       if(edit.edge){start=edit.edge==='body-start'?target.body.start+1:target.body.body[0].end;end=start;}
       if(edit.kind==='literal'&&target.value!==edit.value||edit.kind==='template'&&target.value.cooked!==edit.value)throw Error('定位后的原文不一致');
-      const replacement=edit.kind.startsWith('search-')?decodeReplacement(edit.replacement,names):edit.replacement;
+      const replacement=(edit.kind.startsWith('search-')||edit.kind==='display-expression')?decodeReplacement(edit.replacement,names):edit.replacement;
       edits.push({start,end,original:source.slice(start,end),replacement,kind:edit.kind,context:edit.context,expected:1});
       confirmed.add(edit.kind);
     }

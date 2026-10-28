@@ -1,4 +1,6 @@
-// 仅维护者运行：从已核验的原版资源生成逐节点清单，不修改 Cursor。
+import {standaloneCustomizeEdits} from './customize-standalone.js';
+import {customizeEdits} from './customize.js';
+// 仅维护者运行：从已核验的原版资源生成设置与 Customize 逐节点清单，不修改 Cursor。
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { parse } from 'acorn';
@@ -119,6 +121,12 @@ add(region.start+matcher.start,region.start+matcher.end,matcherReplacement,'sear
 const labelMap=Object.fromEntries(dict);
 const replacement=`function ${cfg.jump}(e,t){const z=Object.getOwnPropertyDescriptor(${JSON.stringify(labelMap)},t)?.value??t,n=e.querySelectorAll(${cfg.selector});let i;for(const r of n){const s=r.textContent?.trim();if(s===t||s===z)return r;const o=${cfg.direct}(r);i===void 0&&(o===t||o===z)&&(i=r)}return i}`;
 add(region.start+jump.start,region.start+jump.end,replacement,'search-jump','search/label-target');
+// Customize 与设置区分别收集，固定版本与自动适配共用同一份定点清单。
+for(const edit of [...customizeEdits(source,dict),...standaloneCustomizeEdits(source,dict)]){
+ const existing=edits.find(e=>e.start===edit.start);
+ if(existing){if(existing.end!==edit.end||existing.replacement!==edit.replacement)throw Error(`Customize 节点冲突：${edit.context}`);continue;}
+ seen.add(edit.start);edits.push(edit);
+}
 edits.sort((a,b)=>a.start-b.start);
 for(let i=1;i<edits.length;i++)if(edits[i].start<edits[i-1].end)throw Error('补丁重叠');
 const adapter={version:product.version,commit:product.commit,platforms:{darwin:version==='3.27.22'?'已完成安装、启动及 Agents 设置中英文搜索与结果跳转验收':'资源已核验，运行待验收',win32:'未完成安装包及运行验收，仅接受相同资源指纹'},file,sha256:createHash('sha256').update(buffer).digest('hex'),region:{start:region.start,end:region.end},edits};

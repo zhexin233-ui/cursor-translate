@@ -1,3 +1,4 @@
+import {verifyCustomize} from './verify-customize.js';
 // 只读核验实际原版资源；补丁只写入临时目录供语法检查。
 import fs from 'node:fs';
 import os from 'node:os';
@@ -14,6 +15,7 @@ import {versions} from './versions.js';
 const app=originalApp(process.argv[2]??APP),version=JSON.parse(fs.readFileSync(path.join(app,'product.json'))).version,adapter=loadAdapter(version);
 const symbols=versions[version].desktop;
 const original=fs.readFileSync(path.join(app,adapter.file));
+verifyCustomize(original.toString(),adapter);
 const patched=applyPatch(original,adapter),source=patched.toString();
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'cursor-zh-check-'));
 try{

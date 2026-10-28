@@ -1,3 +1,4 @@
+import {verifyCustomize} from './verify-customize.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -11,7 +12,9 @@ import {versions} from './versions.js';
 import {originalApp} from './original-app.js';
 import {APP} from './inspect.js';
 const app=originalApp(process.argv[2]??APP),version=JSON.parse(fs.readFileSync(path.join(app,'product.json'))).version,adapter=loadAdapter(version).additionalTargets[0],symbols=versions[version].glass;
-const bytes=applyPatch(fs.readFileSync(path.join(app,adapter.file)),adapter),source=bytes.toString();
+const original=fs.readFileSync(path.join(app,adapter.file));
+verifyCustomize(original.toString(),adapter);
+const bytes=applyPatch(original,adapter),source=bytes.toString();
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'cursor-glass-check-'));
 try{
  const file=path.join(temporary,'glass.mjs');fs.writeFileSync(file,bytes);execFileSync(process.execPath,['--check',file],{stdio:'pipe'});

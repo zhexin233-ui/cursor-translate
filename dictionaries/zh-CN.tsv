@@ -849,3 +849,378 @@ Review your plan's included usage	查看套餐内用量
 Enable usage beyond your plan's included amount	启用超出套餐内额度的用量
 Review enabled on-demand usage and spending	查看已启用的按需用量与支出
 Review whether on-demand spending is enabled	查看是否已启用按需支出
+Loading plugins...	正在加载插件…
+Add Plugin	添加插件
+Remove Plugin	移除插件
+Search the marketplace	搜索插件市场
+No result	没有结果
+Try changing your search query	请尝试修改搜索内容
+Import Marketplace...	导入插件市场…
+Manage plugins	管理插件
+Search or Paste Link	搜索或粘贴链接
+ plugin	 个插件
+Pasted Link	已粘贴的链接
+All plugins from this repository have already been added.	此仓库中的所有插件均已添加。
+No plugins found in this repository.	此仓库中没有找到插件。
+No plugins match your search.	没有匹配的插件。
+All plugins have been added.	所有插件均已添加。
+Failed to create marketplace.	创建插件市场失败。
+e.g. My Team Plugins	例如：我的团队插件
+Slug: 	路径标识：
+What is this marketplace for?	这个插件市场的用途是什么？
+Team Access	团队访问权限
+Creating…	正在创建…
+Failed to import marketplace.	导入插件市场失败。
+Marketplace repository URL	插件市场仓库 URL
+Local folder	本地文件夹
+Path to a local marketplace folder	本地插件市场文件夹路径
+Choose folder…	选择文件夹…
+Importing…	正在导入…
+Add Marketplace	添加插件市场
+Import Marketplace	导入插件市场
+This plugin defines more than one MCP server, or uses options the server form has no field for (such as 	此插件定义了多个 MCP 服务器，或使用了服务器表单未提供的选项（例如 
+, or 	 或 
+). Editing it as JSON keeps those intact.	）。使用 JSON 编辑可保留这些配置。
+MCP config JSON	MCP 配置 JSON
+Saving...	正在保存…
+Add MCP Server	添加 MCP 服务器
+Add to Marketplace	添加到插件市场
+Add plugins to marketplace	向插件市场添加插件
+Add to marketplace	添加到插件市场
+MCP Server	MCP 服务器
+Default Off	默认关闭
+Default On	默认开启
+Variable description	变量说明
+(Optional)	（可选）
+Clear variables	清除变量
+No plugins found	未找到插件
+Add plugins or import from GitHub to make them available for your team.	添加插件或从 GitHub 导入，供团队使用。
+Search plugins	搜索插件
+Clear search	清除搜索
+No matching plugins	没有匹配的插件
+Try a different search.	请尝试其他搜索内容。
+Remove staged plugin	移除待添加的插件
+Remove staged MCP server	移除待添加的 MCP 服务器
+Plugin options	插件选项
+Edit MCP config	编辑 MCP 配置
+Plugin Settings	插件设置
+Undo remove	撤销移除
+Remove plugin	移除插件
+Failed to refresh marketplace.	刷新插件市场失败。
+Marketplace Settings	插件市场设置
+Marketplace Access	插件市场访问权限
+Select who can see and use plugins from this team marketplace	选择谁可以查看和使用此团队插件市场中的插件
+Enable Auto Refresh	启用自动刷新
+Automatically update plugins when changes are pushed to the repository	向仓库推送更改时自动更新插件
+Allow Members to Publish	允许成员发布
+Let any team member publish plugins to this marketplace. When off, only team admins can publish.	允许所有团队成员向此插件市场发布插件。关闭后，仅团队管理员可以发布。
+Serve Marketplace From Cursor	由 Cursor 托管插件市场
+Cursor keeps a synced copy of this repository and serves plugins from it, so team members can use the marketplace without GitHub access to the source repo. Access is controlled by Marketplace Access.	Cursor 会保存此仓库的同步副本并提供其中的插件，让团队成员无需源仓库的 GitHub 访问权限即可使用。访问范围由插件市场访问权限控制。
+Refreshing...	正在刷新…
+Refreshed	已刷新
+Open marketplace repository	打开插件市场仓库
+Plugin Repository	插件仓库
+Fetch marketplace plugins from the GitHub repository	从 GitHub 仓库获取插件市场中的插件
+Checking...	正在检查…
+Delete Marketplace	删除插件市场
+Remove Marketplace	移除插件市场
+This marketplace and its access settings will be removed. The source repository won't be affected.	将移除此插件市场及其访问设置。源仓库不受影响。
+All associated plugins will be removed for users and Cloud Agents.	将为用户和云端智能体移除所有关联插件。
+This removes the marketplace and its access settings; the repository isn't affected.	这会移除插件市场及其访问设置，仓库不受影响。
+Confirm Marketplace Deletion	确认删除插件市场
+Deleting...	正在删除…
+Delete marketplace confirmation	删除插件市场确认
+Repo sync is unable to complete. Access will continue being served from GitHub.	仓库同步无法完成，将继续通过 GitHub 提供访问。
+Confirm Plugin Removal	确认移除插件
+Remove and continue	移除并继续
+The plugins you're removing from the marketplace will no longer be available to users and Cloud Agents that rely on them.	从插件市场移除后，依赖这些插件的用户和云端智能体将无法再使用它们。
+Working...	正在处理…
+MCP impact confirmation	MCP 影响确认
+Failed to save changes.	保存更改失败。
+Marketplace name cannot be empty.	插件市场名称不能为空。
+Discard changes?	放弃更改？
+Marketplace name	插件市场名称
+Remove and save	移除并保存
+Add to Project	添加到项目
+Add for Myself	为我添加
+Add to Team	添加到团队
+Removing...	正在移除…
+Installing...	正在安装…
+View Details	查看详情
+Show More	显示更多
+Verified	已验证
+Verified by Cursor	已通过 Cursor 验证
+Available Marketplaces	可用插件市场
+All members	所有成员
+Plugin	插件
+Access Settings	访问设置
+Plugin Installation	插件安装
+User	用户
+This Workspace	此工作区
+Dashboard	控制台
+Other	其他
+All	全部
+Your account	你的账户
+Runs on Cursor's servers	在 Cursor 服务器上运行
+This computer	此计算机
+This project	此项目
+Unknown	未知
+Error parsing skill	解析技能出错
+Error loading plugin	加载插件出错
+Needs Authentication	需要身份验证
+Needs Attention	需要处理
+Skills	技能
+Subagents	子智能体
+Rules	规则
+Commands	命令
+Extend Cursor with Plugins	使用插件扩展 Cursor
+Plugins bundle rules, skills, subagents, commands, MCP servers, and hooks into one installable package.	插件将规则、技能、子智能体、命令、MCP 服务器和钩子整合为一个可安装的包。
+Connect External Tools with MCP	通过 MCP 连接外部工具
+Model Context Protocol servers connect Cursor to external tools and data sources like Linear, Figma, and Notion.	模型上下文协议服务器将 Cursor 连接到 Linear、Figma、Notion 等外部工具和数据源。
+Teach Cursor New Skills	为 Cursor 添加新技能
+Skills package domain-specific knowledge and workflows that Agent applies automatically when relevant.	技能封装了特定领域的知识和工作流程，智能体会在相关场景中自动应用。
+Delegate Work to Subagents	向子智能体委派任务
+Subagents are specialized assistants that run in their own context window so Agent can parallelize and stay focused.	子智能体是拥有独立上下文窗口的专门助手，让智能体能够并行处理任务并保持专注。
+Guide Agent with Rules	使用规则指导智能体
+Rules give Agent persistent, system-level instructions for your coding standards and workflows.	规则为智能体提供持久的系统级指令，用于遵循你的编码规范和工作流程。
+Create Reusable Commands	创建可复用的命令
+Commands are reusable prompts you invoke with /name to standardize common workflows across your team.	命令是可复用的提示词，通过 /name 调用，帮助团队统一常用工作流程。
+Automate with Hooks	使用钩子实现自动化
+Hooks run custom scripts at lifecycle events to observe, control, and extend the agent loop.	钩子在生命周期事件发生时运行自定义脚本，用于观察、控制和扩展智能体的运行过程。
+Workspaces	工作区
+Sources	来源
+Open config	打开配置
+No matches	没有匹配项
+Show 	再显示 
+ more	 项
+From Marketplace	从插件市场添加
+From GitHub Repository	从 GitHub 仓库添加
+From Local Repository	从本地仓库添加
+Add plugin source	添加插件来源
+Style request, response language, tone...	代码风格、回复语言、语气等…
+Adding...	正在添加…
+Manage in Dashboard	在控制台中管理
+Published	已发布
+Copy error details	复制错误详情
+Copy skill warnings	复制技能警告
+Go to Plugin	转到插件
+Publish Skill	发布技能
+Sync changes	同步更改
+Unpublish Skill	取消发布技能
+Clear log	清除日志
+Execution Log	执行日志
+No hook executions yet	暂无钩子执行记录
+Hooks that run during the agent's loop will show up here.	智能体运行过程中执行的钩子将显示在这里。
+Error Output	错误输出
+Hook execution error	钩子执行错误
+Create destinations	创建位置
+Team MCPs	团队 MCP
+New MCP Server	新建 MCP 服务器
+Add a Custom MCP Server	添加自定义 MCP 服务器
+Manage scope	管理作用范围
+Marketplace	插件市场
+Status	状态
+Scope	作用范围
+Most Used	使用最多
+Source	来源
+Author	作者
+Installed	已安装
+View options	视图选项
+This tab	此分类
+Scroll left	向左滚动
+Scroll right	向右滚动
+Added	已添加
+Manage Marketplace	管理插件市场
+Remove from account	从账户移除
+Uninstall plugin confirmation	卸载插件确认
+Pinned	已置顶
+Date range	日期范围
+No usage data	暂无用量数据
+Rows per page	每页行数
+ of 	 / 
+Previous page	上一页
+Next page	下一页
+Indicates how often the skill was invoked by the agent vs. by a human. Higher % means more agent-invocations.	表示技能由智能体调用的比例。百分比越高，表示智能体调用的次数占比越高。
+Could not load source metadata for this leaderboard.	无法加载此排行榜的来源元数据。
+Leaderboard category	排行榜分类
+Workspace usage source	工作区用量来源
+Selected Sources	所选来源
+Search Plugins, Skills, MCPs...	搜索插件、技能、MCP 等…
+Manage installed plugins	管理已安装的插件
+Manage	管理
+Browse	浏览
+ Marketplace	 插件市场
+Discover	发现
+Popular	热门
+Number of times used by your team in the last 30 days.	你的团队在过去 30 天内的使用次数。
+Number of teammates using this plugin.	使用此插件的团队成员数。
+All Plugins	所有插件
+No plugins yet	暂无插件
+Add plugins to this marketplace so your team can install them.	向此插件市场添加插件，供团队成员安装。
+Add plugins	添加插件
+Remove marketplace?	移除插件市场？
+This marketplace will be removed from your account. The source repository won't be affected.	将从你的账户中移除此插件市场。源仓库不受影响。
+Remove marketplace confirmation	移除插件市场确认
+Cursor Marketplace	Cursor 插件市场
+Personal	个人
+Set up a team marketplace	创建团队插件市场
+Create New	新建
+Add a marketplace from a repository	从仓库添加插件市场
+Import from GitHub	从 GitHub 导入
+Add a marketplace from your local computer	从本地计算机添加插件市场
+Import from Disk	从磁盘导入
+Add a workspace to Cursor to see popular skills, MCPs, subagents, and commands here.	向 Cursor 添加工作区，即可在这里查看热门技能、MCP、子智能体和命令。
+Team Plugins cannot be uninstalled	无法卸载团队插件
+This plugin is managed by a VS Code extension	此插件由 VS Code 扩展管理
+Plugin configuration is managed by your team	插件配置由你的团队管理
+Failed to install marketplace plugin	安装市场插件失败
+Authenticating…	正在验证身份…
+Opening…	正在打开…
+Try in Chat	在对话中试用
+Project	项目
+Private	私有
+Plugin install scope	插件安装范围
+Current Project	当前项目
+Your Team	你的团队
+Finishing setup…	正在完成设置…
+Open configure menu	打开配置菜单
+Add to Cursor	添加到 Cursor
+Imported	已导入
+Extension	扩展
+Website	网站
+Repository	仓库
+Open in Editor	在编辑器中打开
+View 	再查看 
+ More	 项
+Open Plugins	打开插件
+Open MCPs	打开 MCP
+Open Skills	打开技能
+Open Subagents	打开子智能体
+Open Rules	打开规则
+Open Commands	打开命令
+Open Hooks	打开钩子
+ is required	为必填项
+ has an invalid selection	的所选值无效
+ must be a valid number	必须是有效数字
+ must be a whole number	必须是整数
+Select 	选择 
+This plugin includes unsupported install fields: 	此插件包含不支持的安装字段：
+Edit MCP Server · 	编辑 MCP 服务器 · 
+ options	的选项
+Group 	组 
+ are only available on the 	仅适用于以下作用范围：
+ scopes.	。
+ tool	 个工具
+ resource	 个资源
+No hooks match "	没有匹配的钩子：“
+".	”。
+No MCP servers match "	没有匹配的 MCP 服务器：“
+Configure 	配置 
+No results match "	没有匹配的结果：“
+ Workspaces	 个工作区
+Nothing in this tab matches "	此分类中没有匹配项：“
+ aren't available on the 	不适用于以下作用范围：
+ scope	。
+Team marketplace for 	团队插件市场：
+ will be removed from your Cursor account, not just this window. Grok Bot and cloud agents will lose it too until you reinstall it.	将从你的 Cursor 账户中移除，影响所有窗口。在重新安装之前，Grok Bot 和云端智能体也将无法使用。
+Uninstall 	卸载 
+?	？
+Agent share 	智能体调用占比 
+Search 	搜索 
+ for 	，范围：
+...	…
+Used by 	已有 
+teammate	位团队成员使用
+teammates	位团队成员使用
+s from marketplace	：来自插件市场
+Browse Marketplace	浏览插件市场
+Name	名称
+Description	说明
+Create	创建
+Required	必需
+Refresh	刷新
+Delete	删除
+Team	团队
+New	新建
+Documentation	文档
+Enable	启用
+Copy link	复制链接
+Authenticate	验证身份
+Uninstall	卸载
+Loading...	正在加载…
+Team 	团队 
+items	条目
+Manage View	管理视图
+Group By	分组方式
+Filter By	筛选条件
+Sort By	排序方式
+Tools view options	工具视图选项
+Group by options	分组选项
+Filter by options	筛选选项
+Sort by options	排序选项
+Marketplace scope	插件市场作用范围
+All Members	所有成员
+Everyone in 	全体成员，所属团队：
+team	团队
+1 group	1 个组
+ groups	 个组
+ members	 位成员
+No members	暂无成员
+Select directory groups	选择成员组
+Needs authentication	需要身份验证
+Error - Show Output	出错 - 查看输出
+Errored	出错
+Blocked	已阻止
+Ready	就绪
+Blocked by admin	已被管理员阻止
+Loading tools	正在加载工具
+No tools, prompts, or resources	没有工具、提示词或资源
+ tools	 个工具
+ prompts	 个提示词
+ resources	 个资源
+Connecting...	正在连接…
+Connecting	正在连接
+Checking server status...	正在检查服务器状态…
+Checking	正在检查
+Opening authorization...	正在打开授权页面…
+Opening	正在打开
+Waiting for callback...	正在等待授权回调…
+Waiting	正在等待
+Exchanging token...	正在交换令牌…
+Exchanging	正在交换
+New User Skill	新建用户技能
+e.g., my-custom-skill or npx skills add owner/repo	例如：my-custom-skill，或 npx skills add owner/repo
+e.g., my-custom-skill	例如：my-custom-skill
+e.g., my-custom-	例如：my-custom-
+Enter a name, or paste an install command from skills.sh	输入名称，或粘贴来自 skills.sh 的安装命令
+Enter a name for the new skill	请输入新技能的名称
+New User Rule	新建用户规则
+User Rules apply to all of your chats	用户规则适用于你的所有对话
+User Rule	用户规则
+[Untitled]	[未命名]
+Delete Rule	删除规则
+Could not update rule.	无法更新规则。
+Could not delete rule.	无法删除规则。
+Use lowercase letters, numbers, and hyphens (must start with a letter or number)	请使用小写字母、数字和连字符，且以字母或数字开头
+Installing skills from a command is disabled by your team admin	团队管理员已禁用通过命令安装技能
+Needs attention	需要处理
+Degraded	功能受限
+Disconnected	已断开连接
+Prompt	输入
+Failed to validate input.	无法验证输入。
+Select workspace folder for MCP configuration	选择用于 MCP 配置的工作区文件夹
+Cannot create workspace MCPs without a workspace. Please open a folder first.	没有工作区，无法创建工作区 MCP。请先打开文件夹。
+ in 	，位置：
+Enter Command Name	输入命令名称
+e.g., my-custom-command	例如：my-custom-command
+Please enter a name for the new command	请输入新命令的名称
+Command name cannot be empty	命令名称不能为空
+Command name can only contain lowercase letters, numbers, and hyphens	命令名称只能包含小写字母、数字和连字符
+A command with this name already exists	同名命令已存在
+New Rule	新建规则
+e.g. my-rule	例如：my-rule
+Enter a name for the new rule	请输入新规则的名称
+Rule name cannot be empty	规则名称不能为空
+Rule name can only contain lowercase letters, numbers, and hyphens	规则名称只能包含小写字母、数字和连字符
+A rule with this name already exists	同名规则已存在
+Error	错误
